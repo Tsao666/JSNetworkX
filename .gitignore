@@ -4,6 +4,6 @@
 /node_modules
 /jsnetworkx-dev.js
 /_site
-/node
+# /node
 tags
 /runtime.js
