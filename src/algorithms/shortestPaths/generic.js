@@ -269,5 +269,46 @@ export async function shortestPathLength(G, {source, target, weight}={}) {
   return paths;
 }
 
+function _build_paths_from_predecessors(sources, target, pred) {
+  if (pred[target] === undefined) {
+    throw new Error(`Target ${target} cannot be reached from given sources`)
+  }
+  const seen = new Set([target]);
+  const stack = [[target, 0]];
+  let top = 0;
+  while (top >= 0) {
+    const [node, i] = stack[top];
+    if (sources.has(node)) {
+      const stackList = [];
+      for (let idx = 0; idx < top + 1; idx += 1) {
+        stackList.push(stack[idx][0]);
+      }
+      yield stackList.reverse();
+    }
+    if (pred[node].length > i) {
+      stack[top][1] = i + 1;
+      next = pred[node][i];
+      if (seen[next] !== undefined) {
+        continue;
+      } else {
+        seen.add(next);
+      }
+      top += 1;
+      if (top === stack.length) {
+        stack.push([next, 0]);
+      } else {
+        stack[top] = [next, 0]
+      };
+    } else {
+      seen.delete(node);
+      top -= 1;
+    }
+  }
+}
+
 // TODO averageShortestPathLength
-// TODO allShortestPaths
+export async function allShortestPaths(G, {source, target, weight}={}) {
+  if (source === target) return [[]];
+  const [lengths, paths, pred] = singleSourceDijkstra(G, {source, target, weight})
+  return [..._build_paths_from_predecessors(new Set([source]), target, pred)]
+}
