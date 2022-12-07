@@ -262,7 +262,7 @@ export async function singleSourceDijkstra(
   if (nodesAreEqual(source, target)) {
     return [new Map([[source, 0]]), new Map([[source, target]])];
   }
-
+  var pred = {[source]: []}; // add for all_shortest_paths
   var distances = new Map();
   var paths = new Map([[source, [source]]]);
   var seen = new Map([[source, 0]]);
@@ -299,16 +299,21 @@ export async function singleSourceDijkstra(
       if (distances.has(w)) {
         if (vwDistance < distances.get(w)) {
           throw new Error('Contradictory paths found: negative weights?');
+        } else if (vwDistance === distances.get(w)) {
+          pred[w].push(v)
         }
       } else if (!seen.has(w) || vwDistance < seen.get(w)) {
         seen.set(w, vwDistance);
         fringe.enqueue(vwDistance, [i++, w]);
         paths.set(w, paths.get(v).concat([w]));
+        pred[w] = [v];
+      } else if (vwDistance === seen.get(w)) {
+        pred[w].push(v)
       }
     }
   }
 
-  return [distances, paths];
+  return [distances, paths, pred];
 }
 
 // TODO dijkstraPredecessorAndDistance
