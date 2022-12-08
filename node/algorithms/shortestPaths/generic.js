@@ -16,7 +16,7 @@ exports.genShortestPath = genShortestPath;
 exports.shortestPathLength = shortestPathLength;
 exports.genShortestPathLength = genShortestPathLength;
 
-var _internalsDelegate = require('..\\..\\_internals\\delegate');
+var _internalsDelegate = require('../../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

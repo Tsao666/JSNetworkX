@@ -26,7 +26,7 @@ exports.genAllPairsDijkstraPathLength = genAllPairsDijkstraPathLength;
 exports.allPairsDijkstraPath = allPairsDijkstraPath;
 exports.genAllPairsDijkstraPath = genAllPairsDijkstraPath;
 
-var _internalsDelegate = require('..\\..\\_internals\\delegate');
+var _internalsDelegate = require('../../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

@@ -16,7 +16,7 @@ exports.genBinomialGraph = genBinomialGraph;
 exports.erdosRenyiGraph = erdosRenyiGraph;
 exports.genErdosRenyiGraph = genErdosRenyiGraph;
 
-var _internalsDelegate = require('..\\_internals\\delegate');
+var _internalsDelegate = require('../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 
