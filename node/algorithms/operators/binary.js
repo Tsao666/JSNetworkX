@@ -22,7 +22,7 @@ exports.genSymmetricDifference = genSymmetricDifference;
 exports.compose = compose;
 exports.genCompose = genCompose;
 
-var _internalsDelegate = require('..\\..\\_internals\\delegate');
+var _internalsDelegate = require('../../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

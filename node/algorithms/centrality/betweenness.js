@@ -16,7 +16,7 @@ exports.genBetweennessCentrality = genBetweennessCentrality;
 exports.edgeBetweennessCentrality = edgeBetweennessCentrality;
 exports.genEdgeBetweennessCentrality = genEdgeBetweennessCentrality;
 
-var _internalsDelegate = require('..\\..\\_internals\\delegate');
+var _internalsDelegate = require('../../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

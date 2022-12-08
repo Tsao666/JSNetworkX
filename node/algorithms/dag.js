@@ -14,7 +14,7 @@ exports.genTopologicalSortRecursive = genTopologicalSortRecursive;
 exports.isAperiodic = isAperiodic;
 exports.genIsAperiodic = genIsAperiodic;
 
-var _internalsDelegate = require('..\\_internals\\delegate');
+var _internalsDelegate = require('../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

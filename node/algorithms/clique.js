@@ -25,7 +25,7 @@ exports.numberOfCliques = numberOfCliques;
 exports.genNumberOfCliques = genNumberOfCliques;
 var marked0$0 = [findCliques, findCliquesRecursive].map(_regeneratorRuntime.mark);
 
-var _internalsDelegate = require('..\\_internals\\delegate');
+var _internalsDelegate = require('../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 

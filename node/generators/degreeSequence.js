@@ -12,7 +12,7 @@ Object.defineProperty(exports, '__esModule', {
 exports.havelHakimiGraph = havelHakimiGraph;
 exports.genHavelHakimiGraph = genHavelHakimiGraph;
 
-var _internalsDelegate = require('..\\_internals\\delegate');
+var _internalsDelegate = require('../_internals/delegate');
 
 var _internalsDelegate2 = _interopRequireDefault(_internalsDelegate);
 
